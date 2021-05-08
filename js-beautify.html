@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="./public/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="./public/css/style.css" rel="stylesheet" />
+		<link href="./public/img/favicon.ico" rel="shortcut icon">
+		<title>JavaScript Beautifier and Formatter, JavaScript Beautifier Online</title>
+		<meta name="keywords" content="JavaScript Beautifier,JavaScript Formatter" />
+		<meta name="description" content="The online tool lets you beautify/format your JavaScript code,JavaScript Formatter,JavaScript Beautifier and JavaScript Minifier Online,JavaScript Beautifier Online is the JavaScript formatter to format JavaScript online..." />
+		<!-- child-meta -->
+		<link href="./public/css/toastr.min.css" rel="stylesheet" />
+		<script src="./public/js/jquery.min.js"></script>
+		<script src="./public/js/toastr.min.js"></script>
+		<script type="text/javascript" src="./public/js/jscompression/my.js"></script>
+		<script type="text/javascript" src="./public/js/jscompression/Words.js"></script>
+		<script type="text/javascript" src="./public/js/jscompression/beautify.js"></script>
+		<script type="text/javascript" src="./public/js/jscompression/Packer.js"></script>
+	</head>
+
+	<body>
+		<!-- meta -->
+		<nav class="navbar navbar-inverse navbar-fixed-top runoob-header" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">menu switching</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand runoob-title" href="index.html">Web-Tools</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav  navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="css-minify.html">CSS MINIFY</a></li>
+						<li><a href="json-minify.html">JSON MINIFY</a></li>
+						<li><a href="base64-decode.html">BASE64 TO DECODE</a></li>
+						<li><a href="xml-beautify.html">JSON BEAUTIFY</a></li>
+						<li><a href="md5-encryption.html">MD5 ENCRYPTION</a></li>
+						<li><a href="image-to-base64-converter.html">IMAGE TO BASE64</a></li>
+						<li><a href="calculator.html">ONLINE CALCULATOR</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+
+		<div class="container web-content">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li class="js-minify">JavaScript Beautifier and Formatter</li>
+			</ol>
+			<div class="col-md-9 css-content">
+				<div class="description">
+					<h1>JavaScript Beautifier and Formatter</h1>
+					<h2>
+						Beautify dirty, minified Js code using Online Js Beautifier and make your Js code more readable. It gives the Js code proper indentation. Online Js
+						Beautifier also beautifies the js and javascript between the style and script tags.
+					</h2>
+				</div>
+				<div class="tags">
+					<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="minifyJs(1)">Js Minify</a>
+					<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="beautifyJs(1)">Js Beautify</a>
+					<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="encodeJs(1)">Js Encode</a>
+					<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="decodeJs(1)">Js Decode</a>
+					<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="clearJs()">Clear</a>
+					<div class="pull-right">
+						<a class="" href="css-minify">Css Minify/beautifier</a>
+						<a class="" href="html-minify">Html Minify/beautifier</a>
+					</div>
+				</div>
+				<div class="box">
+					<div class="left-box">
+						<div class="form-group">
+							<label for="name">Enter Js here:</label>
+							<textarea class="form-control" rows="3" id="js-value"></textarea>
+						</div>
+					</div>
+					<div class="right-box">
+						<div class="form-group">
+							<label for="name">Results:</label>
+							<a class="btn btn-default" href="javascript:void(0)" role="button" onclick="copyJs()">Copy</a>
+							<textarea class="form-control" rows="3" id="js-result"></textarea>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<!-- Similar tools -->
+				<div class="similar">
+					<h3>Similar Tools</h3>
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="css-minify.html"><img src="./public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="css-minify.html">CSS Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="css-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online CSS Minifier/Compressor,CSS Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="html-minify.html"><img src="./public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="html-minify.html">HTML Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="html-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online HTML Minifier/Compressor,HTML Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="js-minify.html"><img src="./public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="js-minify.html">JS Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="js-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online JS Minifier/Compressor,JS Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="json-minify.html"><img src="./public/img/tools/json.png" /></a>
+							<div class="media-body">
+								<h4><a href="json-minify.html">Json Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="json-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Json Minifier/Compressor,Json Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="xml-minify.html"><img src="./public/img/tools/xml.png" /></a>
+							<div class="media-body">
+								<h4><a href="xml-minify.html">Xml Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="xml-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Xml Minifier/Compressor,Xml Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="sql-minify.html"><img src="./public/img/tools/sql.png" /></a>
+							<div class="media-body">
+								<h4><a href="sql-minify.html">Sql Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="sql-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Sql Minifier/Compressor,Sql Beautifier or Formatter</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				
+				
+
+				<!-- all-tools -->
+				<div class="row" id="all_tools">
+				            <div class="col-md-12">
+				                <div class="row" style="overflow:hidden;">
+									<div class="col-md-6">
+										<div class="css_tools_h">Beautifiers And Minifiers</div>
+										<ul class="css_tools_ul">
+											<li><a href="css-beautify.html">CSS Beautifier</a></li>
+										    <li><a href="css-minify.html">CSS Minifier</a></li>
+										    <li><a href="html-beautify.html">HTML Beautifier</a></li>
+										    <li><a href="html-minify.html">HTML Minifier</a></li>
+										    <li><a href="js-beautify.html">Javascript Beautifier</a></li>
+										    <li><a href="js-minify.html">Javascript Minifier</a></li>
+											<li><a href="json-beautify.html">JSON Beautifier</a></li>
+											<li><a href="json-minify.html">JSON Minifier</a></li>
+											<li><a href="sql-minify.html">SQL Beautifier</a></li>
+										    <li><a href="xml-beautify.html">XML Beautifier</a></li>
+											<li><a href="xml-minify.html">XML Minifier</a></li>
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<div class="css_tools_h">Web Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="css-minify.html">Online CSS Minifier</a></li>
+											<li><a href="html-minify.html">HTML Minifyr</a></li>
+											<li><a href="js-minify.html">JS Minify</a></li>
+											<li><a href="json-minify.html">Json Minify</a></li>
+											<li><a href="sql-minify.html">SQL Minify</a></li>
+											<li><a href="xml-minify.html">XML Minify</a></li>
+											<li><a href="base64-decode.html">Base64 Decode</a></li>
+											<li><a href="md5-encryption.html">MD5 Online Encryption</a></li>
+											<li><a href="random-password-generator.html">Random Password Generator</a></li>
+											<li><a href="sha256-hash-generator.html">Online SHA256 Hash Calculator</a></li>
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<div class="css_tools_h">Color Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="rgb-to-hex-converter.html">RGB To Hex Converter</a></li>
+										    <li><a href="html-color-picker.html">HTML Color Picker</a></li>
+										    <li><a href="rgb-to-hsv-converter.html">RGB To Hsv Converter</a></li>
+											<li><a href="rgb-to-cmyk-converter.html">RGB To CMYK Converter</a></li>
+										    <li><a href="hex-to-cmyk-converter.html">HEX To CMYK Converter</a></li>
+										    <li><a href="hsv-to-cmyk-converter.html">HSV To CMYK Converter</a></li>
+										    <li><a href="hsv-to-hex-converter.html">HSV To HEX onverter</a></li>
+										</ul>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="css_tools_h">Image Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="image-to-base64-converter.html">Image To Base64</a></li>
+										    <li><a href="image-to-base64-converter.html">Base64 To Image</a></li>
+										    <li><a href="scientific-calculator.html">Scientific Calculator Online</a></li>
+										    <li><a href="calculator">Online Calculator</a></li>
+										</ul>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="css_tools_h">Online Tutorial</div>
+										<ul class="css_tools_ul">
+											<li><a href="http://www.w3cschoool.com/introduction-to-html">HTML online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/introduction-to-css">CSS online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/javascript-introduction">JS online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/introduction-to-json">JSON online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/what-is-java">JSON online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/php-tutorial">PHP online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/bootstrap-introduction">Bootstrap online Tutorial</a></li>
+										</ul>
+									</div>
+				
+									<div class="col-md-6">
+										<div class="css_tools_h">Online Tutorial</div>
+										<ul class="css_tools_ul">
+											<li><a href="http://www.w3cschoool.com/jquery-introduction">jQuery online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/xml-introduction">XML online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/mysql-tutorial">Mysql online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/python-tutorial">PYthon online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/vue.js-tutorial">Vue online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/reactjs-tutorial">React online Tutorial</a></li>
+										</ul>
+									</div>
+				                </div>
+				            </div>
+				        </div>
+			</div>
+			<div class="col-md-3 css-right-navbar">
+				<!--right -->
+				<h3>Hot Tools</h3>
+				<ul class="one">
+					<li>
+						<a href="image-to-base64-converter.html">
+							<img src="./public/img/tools/image-to-base64.png" alt="">
+						</a>
+						<a href="image-to-base64-converter.html">
+							<p>Image To Base64 Converter</p>
+						</a>
+						<span>Convert an image to base64 string</span>
+					</li>
+					<li>
+						<a href="css-minify.html">
+							<img src="./public/img/tools/css.png" alt="">
+						</a>
+						<a href="css-minify.html">
+							<p>Css Tools</p>
+						</a>
+						<span>CSS Minifier,Beautifier,Formatter</span>
+					</li>
+					<li>
+						<a href="html-minify.html">
+							<img src="./public/img/tools/html.png" alt="">
+						</a>
+						<a href="html-minify.html">
+							<p>Html Tools</p>
+						</a>
+						<span>Html Minifier,Beautifier,Formatter</span>
+					</li>
+					
+					<li>
+						<a href="base64-decode.html">
+							<img src="./public/img/tools/base64.png" alt="">
+						</a>
+						<a href="base64-decode.html">
+							<p>Base64 Decode/Encode</p>
+						</a>
+						<span>Base64 Decode/Encode</span>
+					</li>
+					
+					<li>
+						<a href="string-to-base64-converter.html">
+							<img src="./public/img/tools/base64-to-img.png" alt="">
+						</a>
+						<a href="string-to-base64-converter.html">
+							<p>Base64 To Image</p>
+						</a>
+						<span>Base64 To Image</span>
+					</li>
+					
+					<li>
+						<a href="html-color-picker.html">
+							<img src="./public/img/tools/color-picker.png" alt="">
+						</a>
+						<a href="html-color-picker.html">
+							<p>HTML Color Picker</p>
+						</a>
+						<span>HTML Color Picker</span>
+					</li>
+				
+					<div class="clear"></div>
+				</ul>
+				
+				<h3>Other Tools</h3>
+				<ul class="two">
+					<li>
+						<p class="title">Web Tools</p>
+						<a href="css-minify.html">Css Minify</a>
+						<a href="css-minify.html">Css Beautifier</a>
+						<a href="html-minify.html">Html Minify</a>
+						<a href="html-minify.html">Html Beautifier</a>
+						<a href="json-minify.html">Json Minify</a>
+						<a href="sql-minify.html">Sql Minify</a>
+						<a href="xml-minify.html">XML Minify</a>
+					</li>
+					<li>
+						<p class="title">Image Tools</p>
+						<a href="image-to-base64-converter.html">Image To Base64</a>
+						<a href="string-to-base64-converter.html">Base64 To Image</a>
+					</li>
+					<li>
+						<p class="title">Color Tools</p>
+						<a href="rgb-to-hex-converter.html">RGB To Hex</a>
+						<a href="html-color-picker.html">HTML Color Picker</a>
+						<a href="rgb-to-cmyk-converter.html">RGB To CMYK</a>
+						<a href="hex-to-cmyk-converter.html">HEX To CMYK</a>
+					</li>
+					<li>
+						<p class="title">Online Calculator</p>
+						<a href="calculator.html">Calculator</a>
+						<a href="scientific-calculator.html">Scientific Calculator</a>
+					</li>
+					<div class="clear"></div>
+				</ul>
+				
+				<h3>Online Tutorial</h3>
+				<ul class="hot-ul">
+					<li><a href="http://www.w3cschoool.com/introduction-to-html">HTML online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/javascript-introduction">javascript online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/introduction-to-css">CSS online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/bootstrap-introduction">Bootstrap  online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/vue.js-tutorial">Vue online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/reactjs-tutorial">React online Tutorial In 2020</a></li>
+					<li><a href="http://www.w3cschoool.com/xml-introduction">Get started with Xpath syntax</a></li>
+					<li><a href="http://www.w3cschoool.com/python-tutorial">An example of the Python Reptile Foundation Getting Started</a></li>
+					<li><a href="http://www.w3cschoool.com/xml-introduction">Introduction to XML - What is XML?</a></li>
+					<li><a href="http://www.w3cschoool.com/introduction-to-json">Introduction to the JSON tutorial</a></li>
+					<div class="clear"></div>
+				</ul>
+				
+				
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="container-fluid footer">
+			<ul class="nav-ul">
+				<li><a href="index.html">Home</a></li>
+				<a href="css-minify.html">Css Minify</a>
+				<a href="css-minify.html">Css Beautifier</a>
+				<a href="html-minify.html">Html Minify</a>
+				<a href="html-minify.html">Html Beautifier</a>
+				<a href="json-minify.html">Json Minify</a>
+				<a href="sql-minify.html">Sql Minify</a>
+				<a href="xml-minify.html">XML Minify</a>
+				<div class="clear"></div>
+			</ul>
+			<p>Disclaimer: If the resources included in this site violate your rights, please send an email to: jjw.quan@gmail.com, we will delete the infringing content in time, thank you for your cooperation!</p>
+			<p>Copyright © 2011-2020 All Rights Reserved.</p>
+		</div>
+		
+		<script type="text/javascript">
+			$(function() {
+				let type = sessionStorage.getItem('type');
+				let value = sessionStorage.getItem('value');
+				if (type == 'minify') {
+					minifyJs(2);
+				} else if (type == 'beautify') {
+					beautifyJs(2);
+				} else if (type == 'encode') {
+					encodeJs(2);
+				} else if (type == 'decode') {
+					decodeJs(2);
+				}
+			});
+
+			// Minify Js
+			function minifyJs(m) {
+				if ($('#js-value').val() != '' && m == 1) {
+					sessionStorage.setItem('type', 'minify');
+					sessionStorage.setItem('value', $('#js-value').val());
+					window.location.href = 'js-minify.html';
+				} else if (m == 2) {
+					let jsValue = minify(sessionStorage.getItem('value'));
+					$('#js-result').val(jsValue);
+					$('#js-value').val(sessionStorage.getItem('value'));
+				}
+			}
+
+			// Beautify Js
+			function beautifyJs(m) {
+				if ($('#js-value').val() != '' && m == 1) {
+					sessionStorage.setItem('type', 'beautify');
+					sessionStorage.setItem('value', $('#js-value').val());
+					window.location.href = 'js-minify.html';
+				} else if (m == 2) {
+					let jsValue = format(sessionStorage.getItem('value'));
+					$('#js-result').val(jsValue);
+					$('#js-value').val(sessionStorage.getItem('value'));
+				}
+			}
+
+			// Encode Js
+			function encodeJs(m) {
+				if ($('#js-value').val() != '' && m == 1) {
+					sessionStorage.setItem('type', 'encode');
+					sessionStorage.setItem('value', $('#js-value').val());
+					window.location.href = 'js-minify.html';
+				} else if (m == 2) {
+					let jsValue = encode(sessionStorage.getItem('value'));
+					$('#js-result').val(jsValue);
+					$('#js-value').val(sessionStorage.getItem('value'));
+				}
+			}
+
+			// Decode Js
+			function decodeJs(m) {
+				if ($('#js-value').val() != '' && m == 1) {
+					sessionStorage.setItem('type', 'decode');
+					sessionStorage.setItem('value', $('#js-value').val());
+					window.location.href = 'js-minify.html';
+				} else if (m == 2) {
+					let jsValue = decode(sessionStorage.getItem('value'));
+					$('#js-result').val(jsValue);
+					$('#js-value').val(sessionStorage.getItem('value'));
+				}
+			}
+
+			// Clear Js
+			function clearJs() {
+				$('#js-value').val('');
+				$('#js-result').val('');
+				sessionStorage.removeItem('type');
+				sessionStorage.removeItem('value');
+			}
+
+			// Copy Js
+			function copyJs() {
+				if ($('#js-result').val() != '') {
+					var copyCon = document.getElementById('js-result');
+					copyCon.select();
+					document.execCommand('Copy');
+					toastr.options.positionClass = 'toast-center-center';
+					toastr.success('Code copied successfully!');
+				}
+			}
+
+			// js format
+			function format(s) {
+				s = js_beautify(s, { indent_with_tabs: true });
+				return s;
+			}
+
+			// js minify
+			function minify(s) {
+				var packer = new Packer();
+				s = packer.pack(s, false, false);
+				console.log(s);
+				return s;
+			}
+
+			// js endode
+			function encode(s) {
+				var packer = new Packer();
+				s = packer.pack(s, true, true);
+				return s;
+			}
+
+			// js decode
+			function decode(s) {
+				var value = $.trim(s);
+				var result = '';
+				if (value && value.indexOf('eval') == 0) {
+					var result = eval(value.slice(4));
+					result = result.replace(/^\s+/, '');
+					if (result && result.charAt(0) === '<') {
+						result = style_html(result, 4, ' ', 80);
+					} else {
+						result = js_beautify(result, 4, ' ');
+					}
+					return result;
+				} else {
+					toastr.options.positionClass = 'toast-center-center';
+					toastr.error('parsing error...');
+				}
+			}
+		</script>
+	</body>
+</html>
