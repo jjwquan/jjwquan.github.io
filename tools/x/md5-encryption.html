@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="../../public/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../../public/css/style.css" rel="stylesheet" />
+		<link href="../../public/img/favicon.ico" rel="shortcut icon">
+		<title>MD5 Encryption,Free MD5 Encryption,Md5 Decrypt and Encrypt</title>
+		<meta name="keywords" content="MD5 Encryption,Free MD5 Encryption,Md5 Decrypt and Encrypt" />
+		<meta name="description" content="❤️️MD5 Encryption,Free MD5 Encryption,Md5 Decrypt and Encrypt,❤️️The MD5 message-digest algorithm is a widely used cryptographic hash function producing a 128-bit (16-byte) hash value, typically expressed as a 32 digit hexadecimal number." />
+		<!-- child-meta -->
+		<link href="../../public/css/toastr.min.css" rel="stylesheet" />
+		<script src="../../public/js/jquery.min.js"></script>
+		<script src="../../public/js/toastr.min.js"></script>
+		<style>
+			.web-content .box textarea {
+				height: 400px;
+			}
+
+			.btn-group button {
+				margin-right: 15px;
+				border-radius: 4px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- meta -->
+		<nav class="navbar navbar-inverse navbar-fixed-top runoob-header" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">menu switching</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand runoob-title" href="index.html">Web-Tools</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav  navbar-right">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="css-minify.html">CSS MINIFY</a></li>
+						<li><a href="json-minify.html">JSON MINIFY</a></li>
+						<li><a href="base64-decode.html">BASE64 TO DECODE</a></li>
+						<li><a href="xml-beautify.html">JSON BEAUTIFY</a></li>
+						<li><a href="md5-encryption.html">MD5 ENCRYPTION</a></li>
+						<li><a href="image-to-base64-converter.html">IMAGE TO BASE64</a></li>
+						<li><a href="calculator.html">ONLINE CALCULATOR</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container -->
+		</nav>
+
+		<div class="container web-content">
+			<ol class="breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li class="/css-decode">MD5 Encryption</li>
+			</ol>
+			<div class="col-md-9 css-content">
+				<div class="description">
+					<h1>MD5 Encryption</h1>
+					<h2>MD5 encryption is a commonly used encryption algorithm, which can process plaintext to produce a 128 bit (16 byte) hash value. In order to display and read and write easily, 128 bit binary number is usually converted into 32-bit hexadecimal number</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="input-group">
+									<span class="input-group-addon" id="basic-addon1">Before encryption</span>
+									<input
+										type="text"
+										class="form-control"
+										id="md5-value"
+										placeholder="The text to encrypt"
+										aria-describedby="basic-addon1"
+										style="text-align: left;"
+									/>
+								</div>
+								<div class="input-group" style="margin-top: 20px;">
+									<span class="input-group-addon" id="basic-addon1">After encryption</span>
+									<input
+										type="text"
+										class="form-control"
+										id="md5-result"
+										placeholder="Encrypted text"
+										aria-describedby="basic-addon1"
+										style="text-align: left;"
+									/>
+								</div>
+								<div class="btn-group" role="group" aria-label="..." style="margin-top: 20px; text-align: left;" _mstaria-label="14352">
+									<button type="button" class="btn btn-success" onclick="md5Encryption(1)">MD5 encryption</button>
+									<button type="button" class="btn btn-info" onclick="copyMd5()">Copy</button>
+									<button type="button" class="btn btn-danger" onclick="clearMd5()">Empty the results</button>
+								</div>
+							</div>
+							<input type="hidden" id="encode" value="1" />
+							<div class="panel-footer"></div>
+						</div>
+					</div>
+				</div>
+				<!-- Similar tools -->
+				<div class="similar">
+					<h3>Similar Tools</h3>
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="css-minify.html"><img src="../../public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="css-minify.html">CSS Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="css-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online CSS Minifier/Compressor,CSS Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="html-minify.html"><img src="../../public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="html-minify.html">HTML Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="html-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online HTML Minifier/Compressor,HTML Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="js-minify.html"><img src="../../public/img/tools/html.png" /></a>
+							<div class="media-body">
+								<h4><a href="js-minify.html">JS Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="js-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online JS Minifier/Compressor,JS Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="json-minify.html"><img src="../../public/img/tools/json.png" /></a>
+							<div class="media-body">
+								<h4><a href="json-minify.html">Json Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="json-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Json Minifier/Compressor,Json Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="xml-minify.html"><img src="../../public/img/tools/xml.png" /></a>
+							<div class="media-body">
+								<h4><a href="xml-minify.html">Xml Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="xml-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Xml Minifier/Compressor,Xml Beautifier or Formatter</div>
+					</div>
+					
+					<div class="media">
+						<div class="media-top">
+							<a class="pull-left" href="sql-minify.html"><img src="../../public/img/tools/sql.png" /></a>
+							<div class="media-body">
+								<h4><a href="sql-minify.html">Sql Tools</a></h4>
+								<p>
+									<span class="left">views：12121</span>
+									<a class="right" href="sql-minify.html">Start Using</a>
+								</p>
+							</div>
+						</div>
+						<div class="media-bot">Online Sql Minifier/Compressor,Sql Beautifier or Formatter</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				
+				
+
+				<!-- all-tools -->
+				<div class="row" id="all_tools">
+				            <div class="col-md-12">
+				                <div class="row" style="overflow:hidden;">
+									<div class="col-md-6">
+										<div class="css_tools_h">Beautifiers And Minifiers</div>
+										<ul class="css_tools_ul">
+											<li><a href="css-beautify.html">CSS Beautifier</a></li>
+										    <li><a href="css-minify.html">CSS Minifier</a></li>
+										    <li><a href="html-beautify.html">HTML Beautifier</a></li>
+										    <li><a href="html-minify.html">HTML Minifier</a></li>
+										    <li><a href="js-beautify.html">Javascript Beautifier</a></li>
+										    <li><a href="js-minify.html">Javascript Minifier</a></li>
+											<li><a href="json-beautify.html">JSON Beautifier</a></li>
+											<li><a href="json-minify.html">JSON Minifier</a></li>
+											<li><a href="sql-minify.html">SQL Beautifier</a></li>
+										    <li><a href="xml-beautify.html">XML Beautifier</a></li>
+											<li><a href="xml-minify.html">XML Minifier</a></li>
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<div class="css_tools_h">Web Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="css-minify.html">Online CSS Minifier</a></li>
+											<li><a href="html-minify.html">HTML Minifyr</a></li>
+											<li><a href="js-minify.html">JS Minify</a></li>
+											<li><a href="json-minify.html">Json Minify</a></li>
+											<li><a href="sql-minify.html">SQL Minify</a></li>
+											<li><a href="xml-minify.html">XML Minify</a></li>
+											<li><a href="base64-decode.html">Base64 Decode</a></li>
+											<li><a href="md5-encryption.html">MD5 Online Encryption</a></li>
+											<li><a href="random-password-generator.html">Random Password Generator</a></li>
+											<li><a href="sha256-hash-generator.html">Online SHA256 Hash Calculator</a></li>
+										</ul>
+									</div>
+									<div class="col-md-6">
+										<div class="css_tools_h">Color Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="rgb-to-hex-converter.html">RGB To Hex Converter</a></li>
+										    <li><a href="html-color-picker.html">HTML Color Picker</a></li>
+										    <li><a href="rgb-to-hsv-converter.html">RGB To Hsv Converter</a></li>
+											<li><a href="rgb-to-cmyk-converter.html">RGB To CMYK Converter</a></li>
+										    <li><a href="hex-to-cmyk-converter.html">HEX To CMYK Converter</a></li>
+										    <li><a href="hsv-to-cmyk-converter.html">HSV To CMYK Converter</a></li>
+										    <li><a href="hsv-to-hex-converter.html">HSV To HEX onverter</a></li>
+										</ul>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="css_tools_h">Image Tools</div>
+										<ul class="css_tools_ul">
+											<li><a href="image-to-base64-converter.html">Image To Base64</a></li>
+										    <li><a href="image-to-base64-converter.html">Base64 To Image</a></li>
+										    <li><a href="scientific-calculator.html">Scientific Calculator Online</a></li>
+										    <li><a href="calculator">Online Calculator</a></li>
+										</ul>
+									</div>
+									
+									<div class="col-md-6">
+										<div class="css_tools_h">Online Tutorial</div>
+										<ul class="css_tools_ul">
+											<li><a href="http://www.w3cschoool.com/introduction-to-html">HTML online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/introduction-to-css">CSS online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/javascript-introduction">JS online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/introduction-to-json">JSON online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/what-is-java">JSON online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/php-tutorial">PHP online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/bootstrap-introduction">Bootstrap online Tutorial</a></li>
+										</ul>
+									</div>
+				
+									<div class="col-md-6">
+										<div class="css_tools_h">Online Tutorial</div>
+										<ul class="css_tools_ul">
+											<li><a href="http://www.w3cschoool.com/jquery-introduction">jQuery online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/xml-introduction">XML online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/mysql-tutorial">Mysql online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/python-tutorial">PYthon online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/vue.js-tutorial">Vue online Tutorial</a></li>
+											<li><a href="http://www.w3cschoool.com/reactjs-tutorial">React online Tutorial</a></li>
+										</ul>
+									</div>
+				                </div>
+				            </div>
+				        </div>
+			</div>
+			<div class="col-md-3 css-right-navbar">
+				<!--right -->
+				<h3>Hot Tools</h3>
+				<ul class="one">
+					<li>
+						<a href="image-to-base64-converter.html">
+							<img src="../../public/img/tools/image-to-base64.png" alt="">
+						</a>
+						<a href="image-to-base64-converter.html">
+							<p>Image To Base64 Converter</p>
+						</a>
+						<span>Convert an image to base64 string</span>
+					</li>
+					<li>
+						<a href="css-minify.html">
+							<img src="../../public/img/tools/css.png" alt="">
+						</a>
+						<a href="css-minify.html">
+							<p>Css Tools</p>
+						</a>
+						<span>CSS Minifier,Beautifier,Formatter</span>
+					</li>
+					<li>
+						<a href="html-minify.html">
+							<img src="../../public/img/tools/html.png" alt="">
+						</a>
+						<a href="html-minify.html">
+							<p>Html Tools</p>
+						</a>
+						<span>Html Minifier,Beautifier,Formatter</span>
+					</li>
+					
+					<li>
+						<a href="base64-decode.html">
+							<img src="../../public/img/tools/base64.png" alt="">
+						</a>
+						<a href="base64-decode.html">
+							<p>Base64 Decode/Encode</p>
+						</a>
+						<span>Base64 Decode/Encode</span>
+					</li>
+					
+					<li>
+						<a href="string-to-base64-converter.html">
+							<img src="../../public/img/tools/base64-to-img.png" alt="">
+						</a>
+						<a href="string-to-base64-converter.html">
+							<p>Base64 To Image</p>
+						</a>
+						<span>Base64 To Image</span>
+					</li>
+					
+					<li>
+						<a href="html-color-picker.html">
+							<img src="../../public/img/tools/color-picker.png" alt="">
+						</a>
+						<a href="html-color-picker.html">
+							<p>HTML Color Picker</p>
+						</a>
+						<span>HTML Color Picker</span>
+					</li>
+				
+					<div class="clear"></div>
+				</ul>
+				
+				<h3>Other Tools</h3>
+				<ul class="two">
+					<li>
+						<p class="title">Web Tools</p>
+						<a href="css-minify.html">Css Minify</a>
+						<a href="css-minify.html">Css Beautifier</a>
+						<a href="html-minify.html">Html Minify</a>
+						<a href="html-minify.html">Html Beautifier</a>
+						<a href="json-minify.html">Json Minify</a>
+						<a href="sql-minify.html">Sql Minify</a>
+						<a href="xml-minify.html">XML Minify</a>
+					</li>
+					<li>
+						<p class="title">Image Tools</p>
+						<a href="image-to-base64-converter.html">Image To Base64</a>
+						<a href="string-to-base64-converter.html">Base64 To Image</a>
+					</li>
+					<li>
+						<p class="title">Color Tools</p>
+						<a href="rgb-to-hex-converter.html">RGB To Hex</a>
+						<a href="html-color-picker.html">HTML Color Picker</a>
+						<a href="rgb-to-cmyk-converter.html">RGB To CMYK</a>
+						<a href="hex-to-cmyk-converter.html">HEX To CMYK</a>
+					</li>
+					<li>
+						<p class="title">Online Calculator</p>
+						<a href="calculator.html">Calculator</a>
+						<a href="scientific-calculator.html">Scientific Calculator</a>
+					</li>
+					<div class="clear"></div>
+				</ul>
+				
+				<h3>Online Tutorial</h3>
+				<ul class="hot-ul">
+					<li><a href="http://www.w3cschoool.com/introduction-to-html">HTML online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/javascript-introduction">javascript online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/introduction-to-css">CSS online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/bootstrap-introduction">Bootstrap  online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/vue.js-tutorial">Vue online Tutorial</a></li>
+					<li><a href="http://www.w3cschoool.com/reactjs-tutorial">React online Tutorial In 2020</a></li>
+					<li><a href="http://www.w3cschoool.com/xml-introduction">Get started with Xpath syntax</a></li>
+					<li><a href="http://www.w3cschoool.com/python-tutorial">An example of the Python Reptile Foundation Getting Started</a></li>
+					<li><a href="http://www.w3cschoool.com/xml-introduction">Introduction to XML - What is XML?</a></li>
+					<li><a href="http://www.w3cschoool.com/introduction-to-json">Introduction to the JSON tutorial</a></li>
+					<div class="clear"></div>
+				</ul>
+				
+				
+			</div>
+		</div>
+		<!-- footer -->
+		<!-- footer -->
+		<div class="container-fluid footer">
+			<ul class="nav-ul">
+				<li><a href="index.html">Home</a></li>
+				<a href="css-minify.html">Css Minify</a>
+				<a href="css-minify.html">Css Beautifier</a>
+				<a href="html-minify.html">Html Minify</a>
+				<a href="html-minify.html">Html Beautifier</a>
+				<a href="json-minify.html">Json Minify</a>
+				<a href="sql-minify.html">Sql Minify</a>
+				<a href="xml-minify.html">XML Minify</a>
+				<div class="clear"></div>
+			</ul>
+			<p>Disclaimer: If the resources included in this site violate your rights, please send an email to:
+				jjw.quan@gmail.com, we will delete the infringing content in time, thank you for your cooperation!</p>
+			<p>Copyright © 2011-2020 All Rights Reserved.</p>
+		</div>
+		<script>
+			var CryptoJS =
+				CryptoJS ||
+				(function(o, q) {
+					var l = {},
+						m = (l.lib = {}),
+						n = (m.Base = (function() {
+							function a() {}
+							return {
+								extend: function(e) {
+									a.prototype = this;
+									var c = new a();
+									e && c.mixIn(e);
+									c.$super = this;
+									return c;
+								},
+								create: function() {
+									var a = this.extend();
+									a.init.apply(a, arguments);
+									return a;
+								},
+								init: function() {},
+								mixIn: function(a) {
+									for (var c in a) a.hasOwnProperty(c) && (this[c] = a[c]);
+									a.hasOwnProperty('toString') && (this.toString = a.toString);
+								},
+								clone: function() {
+									return this.$super.extend(this);
+								}
+							};
+						})()),
+						j = (m.WordArray = n.extend({
+							init: function(a, e) {
+								a = this.words = a || [];
+								this.sigBytes = e != q ? e : 4 * a.length;
+							},
+							toString: function(a) {
+								return (a || r).stringify(this);
+							},
+							concat: function(a) {
+								var e = this.words,
+									c = a.words,
+									d = this.sigBytes,
+									a = a.sigBytes;
+								this.clamp();
+								if (d % 4) for (var b = 0; b < a; b++) e[(d + b) >>> 2] |= ((c[b >>> 2] >>> (24 - 8 * (b % 4))) & 255) << (24 - 8 * ((d + b) % 4));
+								else if (65535 < c.length) for (b = 0; b < a; b += 4) e[(d + b) >>> 2] = c[b >>> 2];
+								else e.push.apply(e, c);
+								this.sigBytes += a;
+								return this;
+							},
+							clamp: function() {
+								var a = this.words,
+									e = this.sigBytes;
+								a[e >>> 2] &= 4294967295 << (32 - 8 * (e % 4));
+								a.length = o.ceil(e / 4);
+							},
+							clone: function() {
+								var a = n.clone.call(this);
+								a.words = this.words.slice(0);
+								return a;
+							},
+							random: function(a) {
+								for (var e = [], c = 0; c < a; c += 4) e.push((4294967296 * o.random()) | 0);
+								return j.create(e, a);
+							}
+						})),
+						k = (l.enc = {}),
+						r = (k.Hex = {
+							stringify: function(a) {
+								for (var e = a.words, a = a.sigBytes, c = [], d = 0; d < a; d++) {
+									var b = (e[d >>> 2] >>> (24 - 8 * (d % 4))) & 255;
+									c.push((b >>> 4).toString(16));
+									c.push((b & 15).toString(16));
+								}
+								return c.join('');
+							},
+							parse: function(a) {
+								for (var b = a.length, c = [], d = 0; d < b; d += 2) c[d >>> 3] |= parseInt(a.substr(d, 2), 16) << (24 - 4 * (d % 8));
+								return j.create(c, b / 2);
+							}
+						}),
+						p = (k.Latin1 = {
+							stringify: function(a) {
+								for (var b = a.words, a = a.sigBytes, c = [], d = 0; d < a; d++) c.push(String.fromCharCode((b[d >>> 2] >>> (24 - 8 * (d % 4))) & 255));
+								return c.join('');
+							},
+							parse: function(a) {
+								for (var b = a.length, c = [], d = 0; d < b; d++) c[d >>> 2] |= (a.charCodeAt(d) & 255) << (24 - 8 * (d % 4));
+								return j.create(c, b);
+							}
+						}),
+						h = (k.Utf8 = {
+							stringify: function(a) {
+								try {
+									return decodeURIComponent(escape(p.stringify(a)));
+								} catch (b) {
+									throw Error('Malformed UTF-8 data');
+								}
+							},
+							parse: function(a) {
+								return p.parse(unescape(encodeURIComponent(a)));
+							}
+						}),
+						b = (m.BufferedBlockAlgorithm = n.extend({
+							reset: function() {
+								this._data = j.create();
+								this._nDataBytes = 0;
+							},
+							_append: function(a) {
+								'string' == typeof a && (a = h.parse(a));
+								this._data.concat(a);
+								this._nDataBytes += a.sigBytes;
+							},
+							_process: function(a) {
+								var b = this._data,
+									c = b.words,
+									d = b.sigBytes,
+									f = this.blockSize,
+									i = d / (4 * f),
+									i = a ? o.ceil(i) : o.max((i | 0) - this._minBufferSize, 0),
+									a = i * f,
+									d = o.min(4 * a, d);
+								if (a) {
+									for (var h = 0; h < a; h += f) this._doProcessBlock(c, h);
+									h = c.splice(0, a);
+									b.sigBytes -= d;
+								}
+								return j.create(h, d);
+							},
+							clone: function() {
+								var a = n.clone.call(this);
+								a._data = this._data.clone();
+								return a;
+							},
+							_minBufferSize: 0
+						}));
+					m.Hasher = b.extend({
+						init: function() {
+							this.reset();
+						},
+						reset: function() {
+							b.reset.call(this);
+							this._doReset();
+						},
+						update: function(a) {
+							this._append(a);
+							this._process();
+							return this;
+						},
+						finalize: function(a) {
+							a && this._append(a);
+							this._doFinalize();
+							return this._hash;
+						},
+						clone: function() {
+							var a = b.clone.call(this);
+							a._hash = this._hash.clone();
+							return a;
+						},
+						blockSize: 16,
+						_createHelper: function(a) {
+							return function(b, c) {
+								return a.create(c).finalize(b);
+							};
+						},
+						_createHmacHelper: function(a) {
+							return function(b, c) {
+								return f.HMAC.create(a, c).finalize(b);
+							};
+						}
+					});
+					var f = (l.algo = {});
+					return l;
+				})(Math);
+			(function(o) {
+				function q(b, f, a, e, c, d, g) {
+					b = b + ((f & a) | (~f & e)) + c + g;
+					return ((b << d) | (b >>> (32 - d))) + f;
+				}
+				function l(b, f, a, e, c, d, g) {
+					b = b + ((f & e) | (a & ~e)) + c + g;
+					return ((b << d) | (b >>> (32 - d))) + f;
+				}
+				function m(b, f, a, e, c, d, g) {
+					b = b + (f ^ a ^ e) + c + g;
+					return ((b << d) | (b >>> (32 - d))) + f;
+				}
+				function n(b, f, a, e, c, d, g) {
+					b = b + (a ^ (f | ~e)) + c + g;
+					return ((b << d) | (b >>> (32 - d))) + f;
+				}
+				var j = CryptoJS,
+					k = j.lib,
+					r = k.WordArray,
+					k = k.Hasher,
+					p = j.algo,
+					h = [];
+				(function() {
+					for (var b = 0; 64 > b; b++) h[b] = (4294967296 * o.abs(o.sin(b + 1))) | 0;
+				})();
+				p = p.MD5 = k.extend({
+					_doReset: function() {
+						this._hash = r.create([1732584193, 4023233417, 2562383102, 271733878]);
+					},
+					_doProcessBlock: function(b, f) {
+						for (var a = 0; 16 > a; a++) {
+							var e = f + a,
+								c = b[e];
+							b[e] = (((c << 8) | (c >>> 24)) & 16711935) | (((c << 24) | (c >>> 8)) & 4278255360);
+						}
+						for (var e = this._hash.words, c = e[0], d = e[1], g = e[2], i = e[3], a = 0; 64 > a; a += 4)
+							16 > a
+								? ((c = q(c, d, g, i, b[f + a], 7, h[a])),
+								  (i = q(i, c, d, g, b[f + a + 1], 12, h[a + 1])),
+								  (g = q(g, i, c, d, b[f + a + 2], 17, h[a + 2])),
+								  (d = q(d, g, i, c, b[f + a + 3], 22, h[a + 3])))
+								: 32 > a
+								? ((c = l(c, d, g, i, b[f + ((a + 1) % 16)], 5, h[a])),
+								  (i = l(i, c, d, g, b[f + ((a + 6) % 16)], 9, h[a + 1])),
+								  (g = l(g, i, c, d, b[f + ((a + 11) % 16)], 14, h[a + 2])),
+								  (d = l(d, g, i, c, b[f + (a % 16)], 20, h[a + 3])))
+								: 48 > a
+								? ((c = m(c, d, g, i, b[f + ((3 * a + 5) % 16)], 4, h[a])),
+								  (i = m(i, c, d, g, b[f + ((3 * a + 8) % 16)], 11, h[a + 1])),
+								  (g = m(g, i, c, d, b[f + ((3 * a + 11) % 16)], 16, h[a + 2])),
+								  (d = m(d, g, i, c, b[f + ((3 * a + 14) % 16)], 23, h[a + 3])))
+								: ((c = n(c, d, g, i, b[f + ((3 * a) % 16)], 6, h[a])),
+								  (i = n(i, c, d, g, b[f + ((3 * a + 7) % 16)], 10, h[a + 1])),
+								  (g = n(g, i, c, d, b[f + ((3 * a + 14) % 16)], 15, h[a + 2])),
+								  (d = n(d, g, i, c, b[f + ((3 * a + 5) % 16)], 21, h[a + 3])));
+						e[0] = (e[0] + c) | 0;
+						e[1] = (e[1] + d) | 0;
+						e[2] = (e[2] + g) | 0;
+						e[3] = (e[3] + i) | 0;
+					},
+					_doFinalize: function() {
+						var b = this._data,
+							f = b.words,
+							a = 8 * this._nDataBytes,
+							e = 8 * b.sigBytes;
+						f[e >>> 5] |= 128 << (24 - (e % 32));
+						f[(((e + 64) >>> 9) << 4) + 14] = (((a << 8) | (a >>> 24)) & 16711935) | (((a << 24) | (a >>> 8)) & 4278255360);
+						b.sigBytes = 4 * (f.length + 1);
+						this._process();
+						b = this._hash.words;
+						for (f = 0; 4 > f; f++) (a = b[f]), (b[f] = (((a << 8) | (a >>> 24)) & 16711935) | (((a << 24) | (a >>> 8)) & 4278255360));
+					}
+				});
+				j.MD5 = k._createHelper(p);
+				j.HmacMD5 = k._createHmacHelper(p);
+			})(Math);
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				let value = sessionStorage.getItem('md5-value');
+				if (value) {
+					md5Encryption(2);
+				}
+			});
+
+			// md5-encryption
+			function md5Encryption(m) {
+				if ($('#md5-value').val() != '' && m == 1) {
+					sessionStorage.setItem('md5-value', $('#md5-value').val());
+					window.location.href = 'md5-online-encryption.html';
+				} else if (m == 2) {
+					let md5Value = sessionStorage.getItem('md5-value');
+					let md5Result = encryption(md5Value);
+					$('#md5-value').val(md5Value);
+					$('#md5-result').val(md5Result);
+				}
+			}
+
+			// Clear md5
+			function clearMd5() {
+				$('#md5-value').val('');
+				$('#md5-result').val('');
+				sessionStorage.removeItem('md5-type');
+				sessionStorage.removeItem('md5-value');
+			}
+
+			// Copy md5
+			function copyMd5() {
+				if ($('#md5-result').val() != '') {
+					var copyCon = document.getElementById('md5-result');
+					copyCon.select();
+					document.execCommand('Copy');
+					toastr.options.positionClass = 'toast-center-center';
+					toastr.success('Code copied successfully!');
+				}
+			}
+
+			// css decode
+			function encryption(s) {
+				var s = CryptoJS.MD5(s);
+				return s;
+			}
+		</script>
+	</body>
+</html>
